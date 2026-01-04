@@ -1,0 +1,145 @@
+{
+  "nav": {
+    "home": "Hjem",
+    "about": "Om oss",
+    "faq": "Ofte stilte spørsmål",
+    "support": "Support",
+    "login": "Logg inn",
+    "signup": "Registrer deg",
+    "dashboard": "Dashbord",
+    "analytics": "Analyser",
+    "proFeatures": "Pro-funksjoner",
+    "documentation": "Dokumentasjon",
+    "settings": "Innstillinger",
+    "signOut": "Logg ut"
+  },
+  "home": {
+    "hero": {
+      "title": "Kom i gang med Visma API-er",
+      "subtitle": "Drevet av Oryon",
+      "description": "Din AI-drevne assistent for Visma API-integrasjon. Oryon hjelper partnere og ISV-er med å raskt forstå, implementere og optimalisere Visma API-er.",
+      "startFreeTrial": "Start gratis prøveperiode",
+      "signIn": "Logg inn"
+    },
+    "features": {
+      "instantGuidance": {
+        "title": "Umiddelbar API-veiledning",
+        "description": "Få umiddelbare svar på dine Visma API-spørsmål. Oryon gir kontekstbevisst veiledning tilpasset dine integrasjonsbehov."
+      },
+      "codeExamples": {
+        "title": "Klar-til-bruk kode",
+        "description": "Få tilgang til kuraterte kodeeksempler og beste praksis. Øk utviklingshastigheten med velprøvde integrasjonsmønstre."
+      },
+      "expertKnowledge": {
+        "title": "Ekspert kunnskapsbase",
+        "description": "Få tilgang til omfattende Visma API-dokumentasjon og integrasjonsguider. Hold deg oppdatert med de nyeste API-endringene."
+      }
+    },
+    "cta": {
+      "title": "Klar til å akselerere din Visma-integrasjon?",
+      "description": "Bli med hundrevis av partnere og ISV-er som stoler på Oryon for sine API-integrasjonsbehov.",
+      "getStarted": "Kom i gang i dag",
+      "button": "Kom i gang i dag"
+    },
+    "pricing": {
+      "title": "Enkel, gjennomsiktig prising",
+      "subtitle": "Velg planen som passer dine behov",
+      "free": {
+        "name": "GRATIS",
+        "price": "kr 0",
+        "period": "/måned",
+        "features": {
+          "calls": "100 API-kall/måned",
+          "support": "Grunnleggende support"
+        },
+        "button": "Kom i gang"
+      },
+      "lite": {
+        "name": "LITE",
+        "price": "kr 290",
+        "period": "/måned",
+        "features": {
+          "calls": "5 000 API-kall/måned",
+          "support": "Prioritert support",
+          "analytics": "Analysedashbord"
+        },
+        "button": "Velg LITE"
+      },
+      "pro": {
+        "name": "PRO",
+        "price": "kr 990",
+        "period": "/måned",
+        "badge": "POPULÆR",
+        "features": {
+          "calls": "50 000 API-kall/måned",
+          "support": "24/7 prioritert support",
+          "analytics": "Avansert analyse",
+          "docs": "API-dokumentasjonstilgang"
+        },
+        "button": "Velg PRO"
+      },
+      "advanced": {
+        "name": "AVANSERT",
+        "price": "kr 2990",
+        "period": "/måned",
+        "features": {
+          "calls": "Ubegrensede API-kall",
+          "support": "Dedikert support",
+          "integrations": "Tilpassede integrasjoner",
+          "sla": "SLA-garanti"
+        },
+        "button": "Velg AVANSERT"
+      }
+    },
+    "footer": {
+      "about": "Om oss",
+      "faq": "Ofte stilte spørsmål",
+      "support": "Support",
+      "terms": "Vilkår",
+      "privacy": "Personvern",
+      "rights": "Alle rettigheter reservert."
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "Velkommen tilbake",
+      "subtitle": "Logg inn på kontoen din",
+      "email": "E-post",
+      "password": "Passord",
+      "emailPlaceholder": "navn@eksempel.no",
+      "submit": "Logg inn",
+      "noAccount": "Har du ikke en konto?",
+      "signupLink": "Registrer deg"
+    },
+    "signup": {
+      "title": "Opprett konto",
+      "subtitle": "Kom i gang med din gratis konto",
+      "name": "Fullt navn",
+      "email": "E-post",
+      "password": "Passord",
+      "confirmPassword": "Bekreft passord",
+      "namePlaceholder": "Ola Nordmann",
+      "emailPlaceholder": "navn@eksempel.no",
+      "submit": "Opprett konto",
+      "hasAccount": "Har du allerede en konto?",
+      "loginLink": "Logg inn"
+    }
+  },
+  "dashboard": {
+    "welcome": "Velkommen til ditt dashbord",
+    "overview": "Her er en oversikt over kontoen din og nylig aktivitet.",
+    "currentPlan": "Nåværende plan",
+    "upgrade": "Oppgrader plan",
+    "apiCalls": "API-kall denne måneden",
+    "quickActions": "Hurtighandlinger",
+    "viewAnalytics": "Vis analyser",
+    "readDocs": "Les dokumentasjon",
+    "contactSupport": "Kontakt support"
+  },
+  "subscription": {
+    "free": "GRATIS",
+    "lite": "LITE",
+    "pro": "PRO",
+    "advanced": "AVANSERT"
+  }
+}

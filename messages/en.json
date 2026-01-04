@@ -1,0 +1,145 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "faq": "FAQ",
+    "support": "Support",
+    "login": "Login",
+    "signup": "Sign Up",
+    "dashboard": "Dashboard",
+    "analytics": "Analytics",
+    "proFeatures": "Pro Features",
+    "documentation": "Documentation",
+    "settings": "Settings",
+    "signOut": "Sign Out"
+  },
+  "home": {
+    "hero": {
+      "title": "Get Started with Visma APIs",
+      "subtitle": "Powered by Oryon",
+      "description": "Your AI-powered assistant for Visma API integration. Oryon helps partners and ISVs quickly understand, implement, and optimize Visma APIs.",
+      "startFreeTrial": "Start Free Trial",
+      "signIn": "Sign In"
+    },
+    "features": {
+      "instantGuidance": {
+        "title": "Instant API Guidance",
+        "description": "Get immediate answers to your Visma API questions. Oryon provides context-aware guidance tailored to your integration needs."
+      },
+      "codeExamples": {
+        "title": "Ready-to-Use Code",
+        "description": "Access curated code examples and best practices. Speed up development with proven integration patterns."
+      },
+      "expertKnowledge": {
+        "title": "Expert Knowledge Base",
+        "description": "Tap into comprehensive Visma API documentation and integration guides. Stay updated with the latest API changes."
+      }
+    },
+    "cta": {
+      "title": "Ready to accelerate your Visma integration?",
+      "description": "Join hundreds of partners and ISVs who trust Oryon for their API integration needs.",
+      "getStarted": "Get Started Today",
+      "button": "Get Started Today"
+    },
+    "pricing": {
+      "title": "Simple, Transparent Pricing",
+      "subtitle": "Choose the plan that fits your needs",
+      "free": {
+        "name": "FREE",
+        "price": "$0",
+        "period": "/month",
+        "features": {
+          "calls": "100 API calls/month",
+          "support": "Basic support"
+        },
+        "button": "Get Started"
+      },
+      "lite": {
+        "name": "LITE",
+        "price": "$29",
+        "period": "/month",
+        "features": {
+          "calls": "5,000 API calls/month",
+          "support": "Priority support",
+          "analytics": "Analytics dashboard"
+        },
+        "button": "Choose LITE"
+      },
+      "pro": {
+        "name": "PRO",
+        "price": "$99",
+        "period": "/month",
+        "badge": "POPULAR",
+        "features": {
+          "calls": "50,000 API calls/month",
+          "support": "24/7 priority support",
+          "analytics": "Advanced analytics",
+          "docs": "API documentation access"
+        },
+        "button": "Choose PRO"
+      },
+      "advanced": {
+        "name": "ADVANCED",
+        "price": "$299",
+        "period": "/month",
+        "features": {
+          "calls": "Unlimited API calls",
+          "support": "Dedicated support",
+          "integrations": "Custom integrations",
+          "sla": "SLA guarantee"
+        },
+        "button": "Choose ADVANCED"
+      }
+    },
+    "footer": {
+      "about": "About",
+      "faq": "FAQ",
+      "support": "Support",
+      "terms": "Terms",
+      "privacy": "Privacy",
+      "rights": "All rights reserved."
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "Welcome back",
+      "subtitle": "Sign in to your account",
+      "email": "Email",
+      "password": "Password",
+      "emailPlaceholder": "name@example.com",
+      "submit": "Sign In",
+      "noAccount": "Don't have an account?",
+      "signupLink": "Sign up"
+    },
+    "signup": {
+      "title": "Create your account",
+      "subtitle": "Get started with your free account",
+      "name": "Full Name",
+      "email": "Email",
+      "password": "Password",
+      "confirmPassword": "Confirm Password",
+      "namePlaceholder": "John Doe",
+      "emailPlaceholder": "name@example.com",
+      "submit": "Create Account",
+      "hasAccount": "Already have an account?",
+      "loginLink": "Sign in"
+    }
+  },
+  "dashboard": {
+    "welcome": "Welcome to your Dashboard",
+    "overview": "Here's an overview of your account and recent activity.",
+    "currentPlan": "Current Plan",
+    "upgrade": "Upgrade Plan",
+    "apiCalls": "API Calls This Month",
+    "quickActions": "Quick Actions",
+    "viewAnalytics": "View Analytics",
+    "readDocs": "Read Documentation",
+    "contactSupport": "Contact Support"
+  },
+  "subscription": {
+    "free": "FREE",
+    "lite": "LITE",
+    "pro": "PRO",
+    "advanced": "ADVANCED"
+  }
+}

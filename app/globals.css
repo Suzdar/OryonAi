@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground: 24 24 27;
+  --background: 255 255 255;
+  --cosmic-primary: 228 90 146;
+  --cosmic-secondary: 93 47 119;
+  --cosmic-accent: 62 30 104;
+}
+
+* {
+  @apply border-gray-200;
+}
+
+body {
+  @apply bg-white text-gray-900;
+  @apply transition-colors duration-300;
+}
+
+/* Gradient for the O in Oryon */
+.logo-planet {
+  display: inline-block;
+  background: linear-gradient(to right, #5d2f77, #e45a92, #ffacac);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .cosmic-text-gradient {
+    @apply bg-gradient-to-r from-cosmic-900 via-cosmic-600 to-nebula-500 bg-clip-text text-transparent;
+  }
+  
+  .cosmic-bg-gradient {
+    @apply bg-gradient-to-br from-cosmic-950 via-cosmic-900 to-cosmic-600;
+  }
+  
+  .cosmic-border-gradient {
+    @apply border-2 border-transparent bg-gradient-to-r from-cosmic-900 via-cosmic-600 to-nebula-500 bg-clip-border;
+  }
+}
+
+@layer components {
+  .cosmic-card {
+    @apply bg-gray-50 rounded-lg shadow-sm;
+    @apply border border-gray-200;
+    @apply text-gray-900;
+    @apply p-4 sm:p-6 lg:p-8;
+    @apply transition-all duration-300;
+  }
+  
+  .cosmic-button {
+    @apply bg-gradient-to-r from-cosmic-900 to-cosmic-600;
+    @apply hover:from-cosmic-950 hover:to-cosmic-700;
+    @apply text-white font-medium px-6 py-2 rounded-lg;
+    @apply transition-all duration-300 transform hover:scale-105;
+    @apply shadow-lg hover:shadow-xl;
+  }
+}

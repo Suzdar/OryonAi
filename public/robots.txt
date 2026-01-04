@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /.next/
+Disallow: /dashboard
+
+Sitemap: https://oryonai.com/sitemap.xml
