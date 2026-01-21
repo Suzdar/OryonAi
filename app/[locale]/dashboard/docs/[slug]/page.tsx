@@ -37,16 +37,16 @@ export default async function DocPage({ params }: { params: { slug: string } }) 
   if (error) {
     return (
       <div className="max-w-7xl">
-        <div className="rounded-lg bg-red-50 border border-red-200 p-6">
-          <h2 className="text-xl font-semibold text-red-900 mb-2">
+        <div className="rounded-lg bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 p-6">
+          <h2 className="text-xl font-semibold text-red-900 dark:text-red-400 mb-2">
             Document Not Found
           </h2>
-          <p className="text-red-700">
+          <p className="text-red-700 dark:text-red-300">
             The requested documentation page could not be found.
           </p>
           <Link
             href="/dashboard/docs"
-            className="mt-4 inline-block text-red-600 hover:text-red-700 font-medium"
+            className="mt-4 inline-block text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300 font-medium"
           >
             ← Back to Documentation
           </Link>
@@ -69,8 +69,8 @@ export default async function DocPage({ params }: { params: { slug: string } }) 
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
         {/* Sidebar */}
         <div className="lg:col-span-1">
-          <div className="rounded-lg bg-white p-6 shadow sticky top-8">
-            <h2 className="text-lg font-semibold text-gray-900 mb-4">
+          <div className="rounded-lg bg-white dark:bg-[#1F1D24] p-6 shadow sticky top-8">
+            <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
               Documentation
             </h2>
             <nav className="space-y-2">
@@ -88,8 +88,8 @@ export default async function DocPage({ params }: { params: { slug: string } }) 
                     href={`/dashboard/docs/${slug}`}
                     className={`block px-3 py-2 text-sm rounded-md transition-colors ${
                       isActive
-                        ? "bg-primary-100 text-primary-900 font-medium"
-                        : "text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                        ? "bg-primary-100 dark:bg-primary-900 text-primary-900 dark:text-primary-100 font-medium"
+                        : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white"
                     }`}
                   >
                     {fileTitle}
@@ -102,8 +102,8 @@ export default async function DocPage({ params }: { params: { slug: string } }) 
 
         {/* Main Content */}
         <div className="lg:col-span-2">
-          <div className="rounded-lg bg-white p-8 shadow">
-            <article className="prose prose-primary max-w-none">
+          <div className="rounded-lg bg-white dark:bg-[#1F1D24] p-8 shadow">
+            <article className="prose prose-primary dark:prose-invert max-w-none">
               <ReactMarkdown remarkPlugins={[remarkGfm]}>
                 {content}
               </ReactMarkdown>

@@ -7,7 +7,9 @@
     "login": "Login",
     "signup": "Sign Up",
     "dashboard": "Dashboard",
+    "aiAssistant": "AI Assistant",
     "analytics": "Analytics",
+    "status": "API Status",
     "proFeatures": "Pro Features",
     "documentation": "Documentation",
     "settings": "Settings",
@@ -107,9 +109,13 @@
       "email": "Email",
       "password": "Password",
       "emailPlaceholder": "name@example.com",
+      "passwordPlaceholder": "********",
       "submit": "Sign In",
+      "submitLoading": "Signing in...",
       "noAccount": "Don't have an account?",
-      "signupLink": "Sign up"
+      "signupLink": "Sign up",
+      "errorInvalid": "Invalid email or password",
+      "errorGeneric": "An error occurred. Please try again."
     },
     "signup": {
       "title": "Create your account",
@@ -120,21 +126,67 @@
       "confirmPassword": "Confirm Password",
       "namePlaceholder": "John Doe",
       "emailPlaceholder": "name@example.com",
+      "passwordPlaceholder": "********",
+      "confirmPasswordPlaceholder": "********",
       "submit": "Create Account",
+      "submitLoading": "Creating account...",
       "hasAccount": "Already have an account?",
-      "loginLink": "Sign in"
+      "loginLink": "Sign in",
+      "errorMismatch": "Passwords do not match",
+      "errorShortPassword": "Password must be at least 8 characters",
+      "errorGeneric": "An error occurred. Please try again.",
+      "successMessage": "Account created successfully"
     }
   },
   "dashboard": {
-    "welcome": "Welcome to your Dashboard",
+    "welcome": "Welcome back",
     "overview": "Here's an overview of your account and recent activity.",
     "currentPlan": "Current Plan",
-    "upgrade": "Upgrade Plan",
-    "apiCalls": "API Calls This Month",
+    "subscriptionStatus": "Status",
+    "accountStatusTitle": "Account Status",
+    "accountStatusActive": "Active",
+    "memberSince": "Member since today",
+    "apiUsage": "API Usage",
+    "requestsThisMonth": "Requests this month",
     "quickActions": "Quick Actions",
+    "viewDocs": "View Documentation",
+    "viewDocsDesc": "Learn how to get started",
+    "accountSettings": "Account Settings",
+    "accountSettingsDesc": "Manage your preferences",
+    "upgradePlan": "Upgrade Plan",
+    "upgradePlanDesc": "Unlock more features",
     "viewAnalytics": "View Analytics",
     "readDocs": "Read Documentation",
-    "contactSupport": "Contact Support"
+    "contactSupport": "Contact Support",
+    "apiCalls": "API Calls This Month"
+  },
+  "settings": {
+    "title": "Settings",
+    "description": "Manage your account preferences",
+    "profile": {
+      "title": "Profile Information",
+      "name": "Full Name",
+      "email": "Email Address",
+      "emailNote": "Email cannot be changed",
+      "save": "Save Changes"
+    },
+    "security": {
+      "title": "Security",
+      "current": "Current Password",
+      "new": "New Password",
+      "confirm": "Confirm New Password",
+      "update": "Update Password"
+    },
+    "language": {
+      "title": "Language",
+      "description": "Choose your preferred language for the dashboard"
+    },
+    "subscription": {
+      "title": "Subscription",
+      "currentPlan": "Current Plan",
+      "status": "Status",
+      "manage": "Manage Subscription"
+    }
   },
   "subscription": {
     "free": "FREE",

@@ -3,10 +3,13 @@
 import { signIn } from "next-auth/react";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { useTranslations, useLocale } from "next-intl";
 import Link from "next/link";
 
 export default function LoginPage() {
   const router = useRouter();
+  const t = useTranslations("auth.login");
+  const locale = useLocale();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -25,36 +28,36 @@ export default function LoginPage() {
       });
 
       if (result?.error) {
-        setError("Invalid email or password");
+        setError(t("errorInvalid"));
       } else {
-        router.push("/dashboard");
+        router.push(`/${locale}/dashboard`);
         router.refresh();
       }
     } catch (error) {
-      setError("An error occurred. Please try again.");
+      setError(t("errorGeneric"));
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-cosmic-100 via-nebula-50 to-galaxy-100 px-4">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-cosmic-100 via-nebula-50 to-galaxy-100 dark:from-[#1F1D24] dark:via-[#2A2732] dark:to-[#1F1D24] px-4">
       <div className="max-w-md w-full cosmic-card p-8">
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold cosmic-text-gradient">Welcome Back</h1>
-          <p className="text-gray-600 mt-2">Sign in to your account</p>
+          <h1 className="text-3xl font-bold cosmic-text-gradient">{t("title")}</h1>
+          <p className="text-gray-600 dark:text-gray-300 mt-2">{t("subtitle")}</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">
           {error && (
-            <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg">
+            <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 text-red-700 dark:text-red-400 px-4 py-3 rounded-lg">
               {error}
             </div>
           )}
 
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-              Email Address
+            <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+              {t("email")}
             </label>
             <input
               id="email"
@@ -62,14 +65,14 @@ export default function LoginPage() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cosmic-500 focus:border-transparent bg-white text-gray-900"
-              placeholder="you@example.com"
+              className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-cosmic-500 focus:border-transparent bg-white dark:bg-[#1F1D24] text-gray-900 dark:text-white"
+              placeholder={t("emailPlaceholder")}
             />
           </div>
 
           <div>
-            <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
-              Password
+            <label htmlFor="password" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+              {t("password")}
             </label>
             <input
               id="password"
@@ -77,8 +80,8 @@ export default function LoginPage() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cosmic-500 focus:border-transparent bg-white text-gray-900"
-              placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢"
+              className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-cosmic-500 focus:border-transparent bg-white dark:bg-[#1F1D24] text-gray-900 dark:text-white"
+              placeholder={t("passwordPlaceholder")}
             />
           </div>
 
@@ -87,14 +90,14 @@ export default function LoginPage() {
             disabled={loading}
             className="cosmic-button w-full"
           >
-            {loading ? "Signing in..." : "Sign In"}
+            {loading ? t("submitLoading") : t("submit")}
           </button>
         </form>
 
-        <p className="text-center text-sm text-gray-600 mt-6">
-          Don't have an account?{" "}
-          <Link href="/signup" className="text-cosmic-600 hover:text-cosmic-700 font-medium">
-            Sign up
+        <p className="text-center text-sm text-gray-600 dark:text-gray-300 mt-6">
+          {t("noAccount")} {" "}
+          <Link href={`/${locale}/signup`} className="text-cosmic-600 hover:text-cosmic-700 font-medium">
+            {t("signupLink")}
           </Link>
         </p>
       </div>

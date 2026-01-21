@@ -76,8 +76,8 @@ export default async function UpgradePage() {
   return (
     <div className="max-w-7xl">
       <div className="mb-12 text-center">
-        <h1 className="text-4xl font-bold text-gray-900">Choose Your Plan</h1>
-        <p className="mt-4 text-xl text-gray-700">
+        <h1 className="text-4xl font-bold text-gray-900 dark:text-white">Choose Your Plan</h1>
+        <p className="mt-4 text-xl text-gray-700 dark:text-gray-300">
           Select the perfect plan for your needs
         </p>
         <div className="mt-4 inline-flex items-center px-4 py-2 rounded-full bg-cosmic-100 text-cosmic-800">
@@ -96,14 +96,14 @@ export default async function UpgradePage() {
             } cosmic-card relative`}
           >
             <div className="mb-8">
-              <h3 className="text-2xl font-bold text-gray-900">{plan.name}</h3>
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white">{plan.name}</h3>
               <div className="mt-4 flex flex-wrap items-baseline gap-2">
                 <span className="text-4xl sm:text-5xl font-extrabold leading-tight cosmic-text-gradient">
                   {plan.price}
                 </span>
-                <span className="text-base sm:text-xl text-gray-700 leading-tight">{plan.period}</span>
+                <span className="text-base sm:text-xl text-gray-700 dark:text-gray-300 leading-tight">{plan.period}</span>
               </div>
-              <p className="mt-4 text-sm text-gray-700">{plan.description}</p>
+              <p className="mt-4 text-sm text-gray-700 dark:text-gray-300">{plan.description}</p>
             </div>
 
             <ul className="mb-8 space-y-3">
@@ -120,7 +120,7 @@ export default async function UpgradePage() {
                       clipRule="evenodd"
                     />
                   </svg>
-                  <span className="text-sm text-gray-800">{feature}</span>
+                  <span className="text-sm text-gray-800 dark:text-gray-200">{feature}</span>
                 </li>
               ))}
             </ul>
@@ -129,10 +129,10 @@ export default async function UpgradePage() {
               disabled={currentTier === plan.tier}
               className={`w-full py-3 px-4 rounded-lg font-medium transition-colors ${
                 currentTier === plan.tier
-                  ? "bg-gray-200 text-gray-700 cursor-not-allowed"
+                  ? "bg-gray-200 dark:bg-[#2A2732] text-gray-700 dark:text-[#B0B0B0] cursor-not-allowed"
                   : plan.highlighted
                   ? "cosmic-button"
-                  : "bg-white text-cosmic-600 border-2 border-cosmic-600 hover:bg-cosmic-50"
+                    : "bg-white dark:bg-[#1F1D24] text-cosmic-600 dark:text-cosmic-400 border-2 border-cosmic-600 dark:border-cosmic-500 hover:bg-cosmic-50 dark:hover:bg-[#2A2732]"
               }`}
             >
               {currentTier === plan.tier ? "Current Plan" : plan.cta}
@@ -141,14 +141,14 @@ export default async function UpgradePage() {
         ))}
       </div>
 
-      <div className="mt-12 rounded-lg bg-gray-100 p-8 text-center">
-        <h2 className="text-2xl font-bold text-gray-900 mb-2">
+      <div className="mt-12 rounded-lg bg-gray-100 dark:bg-[#1F1D24] p-8 text-center">
+        <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
           Need a custom plan?
         </h2>
-        <p className="text-gray-600 mb-4">
+        <p className="text-gray-600 dark:text-gray-300 mb-4">
           Contact our sales team for enterprise solutions and volume pricing.
         </p>
-        <button className="px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors">
+          <button className="px-6 py-3 bg-gray-900 dark:bg-[#1F1D24] dark:border dark:border-gray-700 text-white dark:text-[#E8E8E8] rounded-lg hover:bg-gray-800 dark:hover:bg-[#2A2732] transition-colors">
           Contact Sales
         </button>
       </div>

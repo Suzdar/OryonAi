@@ -12,12 +12,23 @@
   --cosmic-accent: 62 30 104;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground: 229 229 229;
+    --background: 23 23 23;
+  }
+}
+
 * {
-  @apply border-gray-200;
+  @apply border-gray-200 dark:border-gray-700;
+}
+
+html {
+  @apply transition-colors duration-300;
 }
 
 body {
-  @apply bg-white text-gray-900;
+  @apply bg-white text-gray-900 dark:bg-[#1F1D24] dark:text-[#E8E8E8];
   @apply transition-colors duration-300;
 }
 
@@ -48,11 +59,94 @@ body {
   }
 }
 
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes floatOnce {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.animate-float {
+  animation: floatOnce 1.6s ease-in-out 1;
+}
+
+.delay-100 {
+  animation-delay: 100ms;
+}
+
+.delay-200 {
+  animation-delay: 200ms;
+}
+
+.delay-300 {
+  animation-delay: 300ms;
+}
+
+.delay-400 {
+  animation-delay: 400ms;
+}
+
+.delay-500 {
+  animation-delay: 500ms;
+}
+
 @layer components {
   .cosmic-card {
-    @apply bg-gray-50 rounded-lg shadow-sm;
-    @apply border border-gray-200;
-    @apply text-gray-900;
+    @apply bg-gray-50 dark:bg-[#1F1D24] rounded-lg shadow-sm;
+    @apply border border-gray-200 dark:border-gray-700;
+    @apply text-gray-900 dark:text-[#E8E8E8];
     @apply p-4 sm:p-6 lg:p-8;
     @apply transition-all duration-300;
   }

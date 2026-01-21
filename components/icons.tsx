@@ -25,6 +25,35 @@ export function ChartBarIcon({ className }: { className?: string }) {
   );
 }
 
+export function DashboardIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <rect x="4" y="4" width="7" height="7" rx="1" strokeWidth={2} />
+      <rect x="13" y="4" width="7" height="7" rx="1" strokeWidth={2} />
+      <rect x="4" y="13" width="7" height="7" rx="1" strokeWidth={2} />
+      <rect x="13" y="13" width="7" height="7" rx="1" strokeWidth={2} />
+    </svg>
+  );
+}
+
+export function SpeedGaugeIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      {/* Semi-circle gauge */}
+      <path d="M4 13a8 8 0 0116 0" strokeWidth={2} strokeLinecap="round" />
+      {/* Needle */}
+      <path d="M12 13l4-4" strokeWidth={2} strokeLinecap="round" />
+      {/* Center hub */}
+      <circle cx="12" cy="13" r="1.5" />
+      {/* Tick marks */}
+      <path d="M6.5 12.8l1.5.2" strokeWidth={2} strokeLinecap="round" />
+      <path d="M9 11.8l1.4.6" strokeWidth={2} strokeLinecap="round" />
+      <path d="M15 11.8l-1.4.6" strokeWidth={2} strokeLinecap="round" />
+      <path d="M17.5 12.8l-1.5.2" strokeWidth={2} strokeLinecap="round" />
+    </svg>
+  );
+}
+
 export function CogIcon({ className }: { className?: string }) {
   return (
     <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor">

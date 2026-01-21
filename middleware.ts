@@ -4,7 +4,8 @@ import { locales, defaultLocale } from './i18n/request';
 const intlMiddleware = createIntlMiddleware({
   locales,
   defaultLocale,
-  localePrefix: 'always'
+  localePrefix: 'always',
+  localeDetection: false // Disable automatic locale detection
 });
 
 export default intlMiddleware;

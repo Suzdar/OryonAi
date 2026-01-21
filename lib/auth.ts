@@ -15,6 +15,8 @@ const tierCache = new Map<string, TierCacheEntry>();
 export const authOptions: NextAuthOptions = {
   session: {
     strategy: "jwt",
+    maxAge: 24 * 60 * 60, // 24 hours in seconds
+    updateAge: 24 * 60 * 60, // Update session every 24 hours
   },
   pages: {
     signIn: "/login",

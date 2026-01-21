@@ -1,4 +1,5 @@
 import { requireAuth } from "@/lib/auth-guards";
+import { EmptyState } from "@/components/EmptyState";
 import fs from "fs";
 import path from "path";
 import Link from "next/link";
@@ -19,89 +20,210 @@ export default async function DocsPage() {
   }
 
   return (
-    <div className="max-w-7xl">
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900">Documentation</h1>
-        <p className="mt-2 text-gray-600">
-          Learn how to use OryonAi to its full potential
+    <div className="max-w-7xl mx-auto">
+      <div className="mb-12 text-center">
+        <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-3">Visma API Documentation</h1>
+        <p className="text-xl text-gray-600 dark:text-gray-300">
+          Explore documentation and integration guides for Visma products
         </p>
       </div>
 
-      <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
-        {/* Sidebar */}
-        <div className="lg:col-span-1">
-          <div className="rounded-lg bg-white p-6 shadow">
-            <h2 className="text-lg font-semibold text-gray-900 mb-4">
-              Documentation
-            </h2>
-            <nav className="space-y-2">
-              {docFiles.map((file) => {
-                const slug = file.replace(".md", "");
-                const title = slug
-                  .split("-")
-                  .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-                  .join(" ");
-
-                return (
-                  <Link
-                    key={slug}
-                    href={`/dashboard/docs/${slug}`}
-                    className="block px-3 py-2 text-sm text-gray-700 rounded-md hover:bg-gray-100 hover:text-gray-900"
-                  >
-                    {title}
-                  </Link>
-                );
-              })}
-            </nav>
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+        {/* Visma.net ERP */}
+        <div className="group rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-[#1F1D24] p-6 shadow-sm hover:shadow-md transition-shadow">
+          <div className="flex items-start gap-4">
+            <div className="flex-shrink-0">
+              <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-cosmic-500 to-nebula-500 flex items-center justify-center text-white font-bold text-xl">
+                VE
+              </div>
+            </div>
+            <div className="flex-1">
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2 group-hover:text-cosmic-600 transition-colors">
+                Visma.net ERP
+              </h3>
+              <p className="text-sm text-gray-600 dark:text-gray-300 mb-3">
+                Spend less time on configuration, and more time growing your business.
+              </p>
+              <Link
+                href="/dashboard/docs/visma-net-erp"
+                className="inline-flex items-center text-sm font-medium text-cosmic-600 hover:text-cosmic-700"
+              >
+                View Documentation
+                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
+            </div>
           </div>
         </div>
 
-        {/* Main Content */}
-        <div className="lg:col-span-2">
-          <div className="rounded-lg bg-white p-8 shadow">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">
-              Welcome to the Documentation
-            </h2>
-            <div className="prose max-w-none">
-              <p className="text-gray-600 mb-4">
-                Select a topic from the sidebar to get started.
-              </p>
-
-              <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
-                <div className="rounded-lg border-2 border-gray-200 p-4 hover:border-primary-500 hover:bg-primary-50 transition-colors">
-                  <h3 className="font-semibold text-gray-900 mb-2">
-                    Getting Started
-                  </h3>
-                  <p className="text-sm text-gray-600 mb-3">
-                    Learn the basics and set up your account
-                  </p>
-                  <Link
-                    href="/dashboard/docs/getting-started"
-                    className="text-sm text-primary-600 hover:text-primary-700 font-medium"
-                  >
-                    Read more →
-                  </Link>
-                </div>
-
-                <div className="rounded-lg border-2 border-gray-200 p-4 hover:border-primary-500 hover:bg-primary-50 transition-colors">
-                  <h3 className="font-semibold text-gray-900 mb-2">
-                    API Reference
-                  </h3>
-                  <p className="text-sm text-gray-600 mb-3">
-                    Explore our comprehensive API documentation
-                  </p>
-                  <Link
-                    href="/dashboard/docs/api-reference"
-                    className="text-sm text-primary-600 hover:text-primary-700 font-medium"
-                  >
-                    Read more →
-                  </Link>
-                </div>
+        {/* Business NXT API */}
+        <div className="group rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-[#1F1D24] p-6 shadow-sm hover:shadow-md transition-shadow">
+          <div className="flex items-start gap-4">
+            <div className="flex-shrink-0">
+              <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-nebula-500 to-galaxy-500 flex items-center justify-center text-white font-bold text-xl">
+                BN
               </div>
+            </div>
+            <div className="flex-1">
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2 group-hover:text-cosmic-600 transition-colors">
+                Business NXT API
+              </h3>
+              <p className="text-sm text-gray-600 dark:text-gray-300 mb-3">
+                Making integrations simple with next-generation business platform.
+              </p>
+              <Link
+                href="/dashboard/docs/business-nxt"
+                className="inline-flex items-center text-sm font-medium text-cosmic-600 hover:text-cosmic-700"
+              >
+                View Documentation
+                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* Employee */}
+        <div className="group rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-[#1F1D24] p-6 shadow-sm hover:shadow-md transition-shadow">
+          <div className="flex items-start gap-4">
+            <div className="flex-shrink-0">
+              <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-galaxy-500 to-cosmic-500 flex items-center justify-center text-white font-bold text-xl">
+                EM
+              </div>
+            </div>
+            <div className="flex-1">
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2 group-hover:text-cosmic-600 transition-colors">
+                Employee API
+              </h3>
+              <p className="text-sm text-gray-600 dark:text-gray-300 mb-3">
+                Manage employee data, payslips, expenses and time registrations.
+              </p>
+              <Link
+                href="/dashboard/docs/employee"
+                className="inline-flex items-center text-sm font-medium text-cosmic-600 hover:text-cosmic-700"
+              >
+                View Documentation
+                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* Payroll */}
+        <div className="group rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-[#1F1D24] p-6 shadow-sm hover:shadow-md transition-shadow">
+          <div className="flex items-start gap-4">
+            <div className="flex-shrink-0">
+              <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-cosmic-600 to-nebula-600 flex items-center justify-center text-white font-bold text-xl">
+                PR
+              </div>
+            </div>
+            <div className="flex-1">
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2 group-hover:text-cosmic-600 transition-colors">
+                Payroll API
+              </h3>
+              <p className="text-sm text-gray-600 dark:text-gray-300 mb-3">
+                Comprehensive payroll processing and reporting capabilities.
+              </p>
+              <Link
+                href="/dashboard/docs/payroll"
+                className="inline-flex items-center text-sm font-medium text-cosmic-600 hover:text-cosmic-700"
+              >
+                View Documentation
+                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* Calendar */}
+        <div className="group rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-[#1F1D24] p-6 shadow-sm hover:shadow-md transition-shadow">
+          <div className="flex items-start gap-4">
+            <div className="flex-shrink-0">
+              <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-nebula-600 to-galaxy-600 flex items-center justify-center text-white font-bold text-xl">
+                CA
+              </div>
+            </div>
+            <div className="flex-1">
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2 group-hover:text-cosmic-600 transition-colors">
+                Calendar API
+              </h3>
+              <p className="text-sm text-gray-600 dark:text-gray-300 mb-3">
+                Manage calendars, scheduling, and time-based resources.
+              </p>
+              <Link
+                href="/dashboard/docs/calendar"
+                className="inline-flex items-center text-sm font-medium text-cosmic-600 hover:text-cosmic-700"
+              >
+                View Documentation
+                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* Datamart */}
+        <div className="group rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-[#1F1D24] p-6 shadow-sm hover:shadow-md transition-shadow">
+          <div className="flex items-start gap-4">
+            <div className="flex-shrink-0">
+              <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-galaxy-600 to-cosmic-600 flex items-center justify-center text-white font-bold text-xl">
+                DM
+              </div>
+            </div>
+            <div className="flex-1">
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2 group-hover:text-cosmic-600 transition-colors">
+                Datamart API
+              </h3>
+              <p className="text-sm text-gray-600 dark:text-gray-300 mb-3">
+                Access data warehouse and analytics for business intelligence.
+              </p>
+              <Link
+                href="/dashboard/docs/datamart"
+                className="inline-flex items-center text-sm font-medium text-cosmic-600 hover:text-cosmic-700"
+              >
+                View Documentation
+                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
             </div>
           </div>
         </div>
       </div>
+
+      {docFiles.length > 0 && (
+        <div className="mt-12 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-[#1F1D24] p-6 shadow-sm">
+          <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+            Additional Resources
+          </h2>
+          <nav className="space-y-2">
+            {docFiles.map((file) => {
+              const slug = file.replace(".md", "");
+              const title = slug
+                .split("-")
+                .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+                .join(" ");
+
+              return (
+                <Link
+                  key={slug}
+                  href={`/dashboard/docs/${slug}`}
+                  className="block px-3 py-2 text-sm text-gray-700 dark:text-gray-300 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white"
+                >
+                  {title}
+                </Link>
+              );
+            })}
+          </nav>
+        </div>
+      )}
     </div>
   );
 }

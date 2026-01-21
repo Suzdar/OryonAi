@@ -7,7 +7,9 @@
     "login": "Logg inn",
     "signup": "Registrer deg",
     "dashboard": "Dashbord",
+    "aiAssistant": "AI-assistent",
     "analytics": "Analyser",
+    "status": "API-status",
     "proFeatures": "Pro-funksjoner",
     "documentation": "Dokumentasjon",
     "settings": "Innstillinger",
@@ -107,9 +109,13 @@
       "email": "E-post",
       "password": "Passord",
       "emailPlaceholder": "navn@eksempel.no",
+      "passwordPlaceholder": "********",
       "submit": "Logg inn",
+      "submitLoading": "Logger inn...",
       "noAccount": "Har du ikke en konto?",
-      "signupLink": "Registrer deg"
+      "signupLink": "Registrer deg",
+      "errorInvalid": "Ugyldig e-post eller passord",
+      "errorGeneric": "Noe gikk galt. Vennligst prøv igjen."
     },
     "signup": {
       "title": "Opprett konto",
@@ -120,21 +126,67 @@
       "confirmPassword": "Bekreft passord",
       "namePlaceholder": "Ola Nordmann",
       "emailPlaceholder": "navn@eksempel.no",
+      "passwordPlaceholder": "********",
+      "confirmPasswordPlaceholder": "********",
       "submit": "Opprett konto",
+      "submitLoading": "Oppretter konto...",
       "hasAccount": "Har du allerede en konto?",
-      "loginLink": "Logg inn"
+      "loginLink": "Logg inn",
+      "errorMismatch": "Passordene samsvarer ikke",
+      "errorShortPassword": "Passordet må være minst 8 tegn",
+      "errorGeneric": "Noe gikk galt. Vennligst prøv igjen.",
+      "successMessage": "Kontoen ble opprettet"
     }
   },
   "dashboard": {
-    "welcome": "Velkommen til ditt dashbord",
+    "welcome": "Velkommen tilbake",
     "overview": "Her er en oversikt over kontoen din og nylig aktivitet.",
     "currentPlan": "Nåværende plan",
-    "upgrade": "Oppgrader plan",
-    "apiCalls": "API-kall denne måneden",
+    "subscriptionStatus": "Status",
+    "accountStatusTitle": "Kontostatus",
+    "accountStatusActive": "Aktiv",
+    "memberSince": "Medlem siden i dag",
+    "apiUsage": "API-bruk",
+    "requestsThisMonth": "Forespørsler denne måneden",
     "quickActions": "Hurtighandlinger",
+    "viewDocs": "Se dokumentasjon",
+    "viewDocsDesc": "Lær hvordan du kommer i gang",
+    "accountSettings": "Kontoinnstillinger",
+    "accountSettingsDesc": "Administrer preferansene dine",
+    "upgradePlan": "Oppgrader plan",
+    "upgradePlanDesc": "Lås opp flere funksjoner",
     "viewAnalytics": "Vis analyser",
     "readDocs": "Les dokumentasjon",
-    "contactSupport": "Kontakt support"
+    "contactSupport": "Kontakt support",
+    "apiCalls": "API-kall denne måneden"
+  },
+  "settings": {
+    "title": "Innstillinger",
+    "description": "Administrer kontoinnstillingene dine",
+    "profile": {
+      "title": "Profilinformasjon",
+      "name": "Fullt navn",
+      "email": "E-postadresse",
+      "emailNote": "E-post kan ikke endres",
+      "save": "Lagre endringer"
+    },
+    "security": {
+      "title": "Sikkerhet",
+      "current": "Nåværende passord",
+      "new": "Nytt passord",
+      "confirm": "Bekreft nytt passord",
+      "update": "Oppdater passord"
+    },
+    "language": {
+      "title": "Språk",
+      "description": "Velg foretrukket språk for dashbordet"
+    },
+    "subscription": {
+      "title": "Abonnement",
+      "currentPlan": "Nåværende plan",
+      "status": "Status",
+      "manage": "Administrer abonnement"
+    }
   },
   "subscription": {
     "free": "GRATIS",

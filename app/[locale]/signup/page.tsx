@@ -2,10 +2,13 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { useTranslations, useLocale } from "next-intl";
 import Link from "next/link";
 
 export default function SignupPage() {
   const router = useRouter();
+  const t = useTranslations("auth.signup");
+  const locale = useLocale();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -18,12 +21,12 @@ export default function SignupPage() {
     setError("");
 
     if (password !== confirmPassword) {
-      setError("Passwords do not match");
+      setError(t("errorMismatch"));
       return;
     }
 
     if (password.length < 8) {
-      setError("Password must be at least 8 characters");
+      setError(t("errorShortPassword"));
       return;
     }
 
@@ -39,37 +42,37 @@ export default function SignupPage() {
       const data = await response.json();
 
       if (!response.ok) {
-        setError(data.error || "Something went wrong");
+        setError(data.error || t("errorGeneric"));
         setLoading(false);
         return;
       }
 
       // Redirect to login page after successful signup
-      router.push("/login?message=Account created successfully");
+      router.push(`/${locale}/login?message=${encodeURIComponent(t("successMessage"))}`);
     } catch (error) {
-      setError("An error occurred. Please try again.");
+      setError(t("errorGeneric"));
       setLoading(false);
     }
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-cosmic-100 via-nebula-50 to-galaxy-100 px-4">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-cosmic-100 via-nebula-50 to-galaxy-100 dark:from-[#1F1D24] dark:via-[#2A2732] dark:to-[#1F1D24] px-4">
       <div className="max-w-md w-full cosmic-card p-8">
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold cosmic-text-gradient">Create Account</h1>
-          <p className="text-gray-600 mt-2">Get started with your free account</p>
+          <h1 className="text-3xl font-bold cosmic-text-gradient">{t("title")}</h1>
+          <p className="text-gray-600 dark:text-gray-300 mt-2">{t("subtitle")}</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">
           {error && (
-            <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg">
+            <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 text-red-700 dark:text-red-400 px-4 py-3 rounded-lg">
               {error}
             </div>
           )}
 
           <div>
-            <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-              Full Name
+            <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+              {t("name")}
             </label>
             <input
               id="name"
@@ -77,14 +80,14 @@ export default function SignupPage() {
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cosmic-500 focus:border-transparent bg-white text-gray-900"
-              placeholder="John Doe"
+              className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-cosmic-500 focus:border-transparent bg-white dark:bg-[#1F1D24] text-gray-900 dark:text-white"
+              placeholder={t("namePlaceholder")}
             />
           </div>
 
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-              Email Address
+            <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+              {t("email")}
             </label>
             <input
               id="email"
@@ -92,14 +95,14 @@ export default function SignupPage() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cosmic-500 focus:border-transparent bg-white text-gray-900"
-              placeholder="you@example.com"
+              className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-cosmic-500 focus:border-transparent bg-white dark:bg-[#1F1D24] text-gray-900 dark:text-white"
+              placeholder={t("emailPlaceholder")}
             />
           </div>
 
           <div>
-            <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
-              Password
+            <label htmlFor="password" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+              {t("password")}
             </label>
             <input
               id="password"
@@ -107,14 +110,14 @@ export default function SignupPage() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cosmic-500 focus:border-transparent bg-white text-gray-900"
-              placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢"
+              className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-cosmic-500 focus:border-transparent bg-white dark:bg-[#1F1D24] text-gray-900 dark:text-white"
+              placeholder={t("passwordPlaceholder")}
             />
           </div>
 
           <div>
-            <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700 mb-2">
-              Confirm Password
+            <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+              {t("confirmPassword")}
             </label>
             <input
               id="confirmPassword"
@@ -122,8 +125,8 @@ export default function SignupPage() {
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
               required
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cosmic-500 focus:border-transparent bg-white text-gray-900"
-              placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢"
+              className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-cosmic-500 focus:border-transparent bg-white dark:bg-[#1F1D24] text-gray-900 dark:text-white"
+              placeholder={t("confirmPasswordPlaceholder")}
             />
           </div>
 
@@ -132,14 +135,14 @@ export default function SignupPage() {
             disabled={loading}
             className="cosmic-button w-full"
           >
-            {loading ? "Creating account..." : "Create Account"}
+            {loading ? t("submitLoading") : t("submit")}
           </button>
         </form>
 
-        <p className="text-center text-sm text-gray-600 mt-6">
-          Already have an account?{" "}
-          <Link href="/login" className="text-cosmic-600 hover:text-cosmic-700 font-medium">
-            Sign in
+        <p className="text-center text-sm text-gray-600 dark:text-gray-300 mt-6">
+          {t("hasAccount")} {" "}
+          <Link href={`/${locale}/login`} className="text-cosmic-600 hover:text-cosmic-700 font-medium">
+            {t("loginLink")}
           </Link>
         </p>
       </div>
